@@ -11,7 +11,7 @@ class Input extends React.Component {
 
     render() {
         return <div>
-            <input value={this.props.value} onChange={this.props.onChange} className="input-width"
+            <input value={this.props.value} onChange={this.props.onChange} className="input"
                    placeholder={this.props.placeHolder}/>
         </div>
     }

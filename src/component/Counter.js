@@ -5,12 +5,12 @@ class Counter extends React.Component {
 
     render() {
         return (
-            <table>
+            <table className="table-center">
                 <thead>
                 <tr>
-                    <th className="mutator-cell" onClick={this.props.onDecrease}>-</th>
+                    <th className="mutator" onClick={this.props.onDecrease}>-</th>
                     <th>{this.props.count}</th>
-                    <th className="mutator-cell" onClick={this.props.onIncrease}>+</th>
+                    <th className="mutator" onClick={this.props.onIncrease}>+</th>
                 </tr>
                 </thead>
             </table>

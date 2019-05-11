@@ -3,7 +3,7 @@ import FormTitle from "./FormTitle";
 import Input from "./Input";
 import Counter from "./Counter";
 
-class ProductForm extends React.Component{
+class ProductForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -39,8 +39,13 @@ class ProductForm extends React.Component{
         }
     };
 
-    getProduct = () => {
-        return Object.assign({}, this.state);
+    onAddProduct = () => {
+        const product = Object.assign({}, this.state);
+        this.setState({
+            name: '',
+            price: 0,
+            count: 1
+        }, this.props.onAddProduct(product));
     };
 
     render() {
@@ -48,9 +53,13 @@ class ProductForm extends React.Component{
             <div>
                 <FormTitle/>
                 <Input value={this.state.name} onChange={this.onNameChange} placeHolder="Product name"/>
-                <Input value={this.state.price ? this.state.price : ''} onChange={this.onPriceChange} placeHolder="Product price"/>
-                <Counter onDecrease={this.onDecreaseCounter} onIncrease={this.onIncreaseCounter} count={this.state.count}/>
-                <button onClick={this.props.onAddProduct.bind(this, this.getProduct())}>Add to list</button>
+                <Input value={this.state.price ? this.state.price : ''} onChange={this.onPriceChange}
+                       placeHolder="Product price"/>
+                <Counter onDecrease={this.onDecreaseCounter} onIncrease={this.onIncreaseCounter}
+                         count={this.state.count}/>
+                <button onClick={this.onAddProduct}
+                        disabled={!this.state.name || !this.state.price || isNaN(this.state.price)}>Add to list
+                </button>
             </div>
         )
     }
