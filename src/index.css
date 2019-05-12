@@ -5,9 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(40, 44, 52);
+  color: #D5D5D5;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+button {
+  padding: 5px 10px 5px 10px;
+  margin: 10px;
+}
+
+input {
+  background-color: #376f59;
+  color: #D5D5D5;
+  border: none;
+  padding-left: 10px;
 }

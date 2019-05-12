@@ -1,4 +1,17 @@
 .product-item {
-    border: solid 1px black;
-    margin: 5px 30px 5px 30px;
+    position: relative;
+    background-color: #376f59;
+    margin-bottom: 1px;
+}
+
+.product-name {
+    display: inline-block;
+    margin: 5px 0 10px 0;
+    font-size: large;
+}
+
+.product-actions {
+    display: inline;
+    position: absolute;
+    right: 0;
 }

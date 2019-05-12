@@ -1,5 +1,4 @@
 import React from "react";
-import FormTitle from "./FormTitle";
 import Input from "./Input";
 import Counter from "./Counter";
 
@@ -50,8 +49,8 @@ class ProductForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <FormTitle/>
+            <div className="product-form-content">
+                <h2>Add product to your cart list</h2>
                 <Input value={this.state.name} onChange={this.onNameChange} placeHolder="Product name"/>
                 <Input value={this.state.price ? this.state.price : ''} onChange={this.onPriceChange}
                        placeHolder="Product price"/>

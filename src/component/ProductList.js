@@ -1,23 +1,23 @@
 import React from "react";
 import ProductItem from './ProductItem';
 import '../css/product-list.css';
+import TotalPrice from "./TotalPrice";
 
 class ProductList extends React.Component {
     render() {
-        const products = this.props.products.map((product, index) => {
-            return <ProductItem key={index} name={product.name} count={product.count} price={product.price}
-                                onIncreaseCounter={this.props.onIncreaseCounter.bind(this, index)}
-                                onDecreaseCounter={this.props.onDecreaseCounter.bind(this, index)}/>
+        const products = this.props.products.map(product => {
+            return <ProductItem key={product.id} name={product.name} count={product.count} price={product.price}
+                                onIncreaseCounter={this.props.onIncreaseCounter.bind(this, product)}
+                                onDecreaseCounter={this.props.onDecreaseCounter.bind(this, product)}
+                                onRemoveItem={this.props.onRemoveItem.bind(this, product)}
+                                onShowProductProfile={this.props.onShowProductProfile.bind(this, product)}/>
         });
-
-        const totalPrice = this.props.products.map((product) => product.count * product.price)
-            .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
         return (
             <div>
-                <div>Product list</div>
+                <h2>Product list</h2>
                 {products}
-                <div className="total-price">Total: {totalPrice} $</div>
+                <TotalPrice products={this.props.products}/>
             </div>
         )
     }

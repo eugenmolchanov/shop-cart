@@ -10,9 +10,15 @@ table th {
 
 .mutator {
     cursor: pointer;
+    background-color: #224b40;
 }
 
 table.table-center {
     margin-left:auto;
     margin-right:auto;
+    border: none;
+}
+
+table th {
+    border: none;
 }
