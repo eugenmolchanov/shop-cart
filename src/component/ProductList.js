@@ -7,6 +7,7 @@ class ProductList extends React.Component {
     render() {
         const products = this.props.products.map(product => {
             return <ProductItem key={product.id} name={product.name} count={product.count} price={product.price}
+                                icon={product.icon}
                                 onIncreaseCounter={this.props.onIncreaseCounter.bind(this, product)}
                                 onDecreaseCounter={this.props.onDecreaseCounter.bind(this, product)}
                                 onRemoveItem={this.props.onRemoveItem.bind(this, product)}

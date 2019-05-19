@@ -1,0 +1,8 @@
+.image-selector {
+    background-color: #27503e;
+    display: inline-block;
+}
+
+.image-selector .bucket:hover {
+    background-color: #1f4130;
+}

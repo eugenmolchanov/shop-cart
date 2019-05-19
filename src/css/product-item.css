@@ -2,6 +2,7 @@
     position: relative;
     background-color: #376f59;
     margin-bottom: 1px;
+    padding-bottom: 5px;
 }
 
 .product-name {
@@ -14,4 +15,33 @@
     display: inline;
     position: absolute;
     right: 0;
+    background-color: #204b3c;
+    cursor: pointer;
+}
+
+.product-icon {
+    display: inline;
+    position: absolute;
+    left: 10px;
+    bottom: 25px;
+}
+
+.product-item:hover {
+    background-color: #2b5f45;
+}
+
+.item-total-price {
+    margin: 10px;
+}
+
+.product-action {
+    display: inline-block;
+}
+
+.product-action:hover {
+    background-color: #3e836c;
+}
+
+.action-image {
+    margin: 3px;
 }
