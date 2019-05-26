@@ -13,18 +13,18 @@ class ProductItem extends React.Component {
                 <div className="product-name">{this.props.name}</div>
                 <div className="product-actions">
                     <div className="product-action">
-                        <img src={TrashImage} onClick={this.props.onRemoveItem} alt="trash" width="25px"
+                        <img src={TrashImage} onClick={this.props.onRemoveItem} alt="trash"
                              className="action-image"/>
                     </div>
                     <div className="product-action">
                         <Link onClick={this.props.onShowProductProfile} to="/profile">
-                            <img src={AttachImage} onClick={this.props.onShowProductProfile} alt="trash" width="25px"
+                            <img src={AttachImage} onClick={this.props.onShowProductProfile} alt="trash"
                                  className="action-image"/>
                         </Link>
                     </div>
                 </div>
                 <div className="product-icon">
-                    <img src={this.props.icon} alt="bucket" className="item-image" height="50px" width="50px"/>
+                    <img src={this.props.icon} alt="" className="item-image"/>
                 </div>
                 <Counter onIncrease={this.props.onIncreaseCounter} onDecrease={this.props.onDecreaseCounter}
                          count={this.props.count}/>

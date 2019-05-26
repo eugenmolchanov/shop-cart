@@ -3,7 +3,7 @@ import Input from "./Input";
 import Counter from "./Counter";
 import "../css/product-form.css";
 import BucketImage from "../image/bucket.svg";
-import ImageSelector from "./ImageSelector";
+import ImageSelector from "../container/product-list";
 import FormIcon from "./FormIcon";
 
 class ProductForm extends React.Component {
