@@ -15,7 +15,7 @@ class ProductProfile extends React.Component {
             return (
                 <div>
                     <h2>{this.props.product.name}</h2>
-                    <img src={this.props.product.icon} width="80px" alt="image" className="profile-image"/>
+                    <img src={this.props.product.icon} alt="image" className="profile-image"/>
                     <div className="profile-info">Count: {this.props.product.count}</div>
                     <div className="profile-info">Price: {this.props.product.price} $</div>
                     <div className="profile-info">Total: {this.props.product.price * this.props.product.count} $</div>
