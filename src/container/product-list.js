@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import ImageSelector from '../component/ImageSelector';
+import App from '../App';
 
 function mapStateToProps(state) {
     return {
@@ -7,4 +7,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps) (ImageSelector)
+export default connect(mapStateToProps) (App)

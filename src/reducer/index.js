@@ -1,7 +1,9 @@
 import {combineReducers} from "redux";
-import ProductReducer from "./reducer-products";
+import ProductIconReducer from "./products-icons";
+import ProductReducer from "./products";
 
 const allReducers = combineReducers({
+    productsIcons: ProductIconReducer,
     products: ProductReducer
 });
 

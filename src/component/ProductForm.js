@@ -3,8 +3,10 @@ import Input from "./Input";
 import Counter from "./Counter";
 import "../css/product-form.css";
 import BucketImage from "../image/bucket.svg";
-import ImageSelector from "../container/product-list";
+import ImageSelector from "../container/product-icon-list";
 import FormIcon from "./FormIcon";
+import {addProduct as addProductAction} from '../action/action-creator';
+import {store} from '../index';
 
 class ProductForm extends React.Component {
     constructor(props) {
@@ -50,7 +52,7 @@ class ProductForm extends React.Component {
             name: '',
             price: 0,
             count: 1
-        }, this.props.onAddProduct(product));
+        }, () => store.dispatch(addProductAction(product)));
     };
 
     openImageSelector = () => {

@@ -4,16 +4,30 @@ import '../css/product-item.css'
 import {Link} from "react-router-dom";
 import TrashImage from "../image/trash.svg";
 import AttachImage from "../image/attach.svg";
+import {store} from '../index';
+import {removeProduct, increaseCounter, decreaseCount} from '../action/action-creator';
 
 class ProductItem extends React.Component {
+
+    onRemoveItem = () => {
+        store.dispatch(removeProduct(this.props.product));
+    };
+
+    onIncreaseCounter = () => {
+        store.dispatch(increaseCounter(this.props.product));
+    };
+
+    onDecreaseCounter = () => {
+        store.dispatch(decreaseCount(this.props.product));
+    };
 
     render() {
         return (
             <div className="product-item">
-                <div className="product-name">{this.props.name}</div>
+                <div className="product-name">{this.props.product.name}</div>
                 <div className="product-actions">
                     <div className="product-action">
-                        <img src={TrashImage} onClick={this.props.onRemoveItem} alt="trash"
+                        <img src={TrashImage} onClick={this.onRemoveItem} alt="trash"
                              className="action-image"/>
                     </div>
                     <div className="product-action">
@@ -24,11 +38,11 @@ class ProductItem extends React.Component {
                     </div>
                 </div>
                 <div className="product-icon">
-                    <img src={this.props.icon} alt="" className="item-image"/>
+                    <img src={this.props.product.icon} alt="" className="item-image"/>
                 </div>
-                <Counter onIncrease={this.props.onIncreaseCounter} onDecrease={this.props.onDecreaseCounter}
-                         count={this.props.count}/>
-                <div className="item-total-price">Total: {this.props.count * this.props.price} $</div>
+                <Counter onIncrease={this.onIncreaseCounter} onDecrease={this.onDecreaseCounter}
+                         count={this.props.product.count}/>
+                <div className="item-total-price">Total: {this.props.product.count * this.props.product.price} $</div>
             </div>
         )
     }
