@@ -3,11 +3,14 @@ import IceCreamImage from "../image/ice-cream.svg";
 import BreadImage from "../image/bread.svg";
 import MilkImage from "../image/milk.svg";
 
-export default function() {
-    return [
-        MilkImage,
-        BreadImage,
-        AppleImage,
-        IceCreamImage
-    ];
+const initialState = [
+    MilkImage,
+    BreadImage,
+    AppleImage,
+    IceCreamImage
+];
+
+
+export default function (state = initialState, action) {
+    return state;
 }
