@@ -3,10 +3,8 @@ import Input from "./Input";
 import Counter from "./Counter";
 import "../css/product-form.css";
 import BucketImage from "../image/bucket.svg";
-import ImageSelector from "../container/product-icon-list";
+import ImageSelector from "../container/products-icons-container";
 import FormIcon from "./FormIcon";
-import {addProduct as addProductAction} from '../action/action-creator';
-import {store} from '../index';
 
 class ProductForm extends React.Component {
     constructor(props) {
@@ -53,7 +51,7 @@ class ProductForm extends React.Component {
             price: 0,
             count: 1,
             icon: BucketImage,
-        }, () => store.dispatch(addProductAction(product)));
+        }, () => this.props.onAddProduct(product));
     };
 
     openImageSelector = () => {
@@ -84,7 +82,8 @@ class ProductForm extends React.Component {
                 </div>
                 <div>
                     <button onClick={this.onAddProduct}
-                            disabled={!this.state.name || !this.state.price || isNaN(this.state.price)}>Add to list
+                            disabled={!this.state.name || !this.state.price || isNaN(this.state.price)}>
+                        Add to list
                     </button>
                 </div>
             </div>

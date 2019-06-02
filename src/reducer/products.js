@@ -21,15 +21,15 @@ export default function (state = initialState, action) {
     }
 }
 
-function stateAfterAddingProduct(state, action) {
+const stateAfterAddingProduct = (state, action) => {
     action.product.id = state.id + 1;
     return {
         id: state.id + 1,
         products: [...state.products, action.product]
     };
-}
+};
 
-function stateAfterIncreasingCount(state, action) {
+const stateAfterIncreasingCount = (state, action) => {
     let productsCopy = [...state.products];
     let index = productsCopy.indexOf(action.product);
     productsCopy[index].count = productsCopy[index].count + 1;
@@ -37,9 +37,9 @@ function stateAfterIncreasingCount(state, action) {
         id: state.id,
         products: productsCopy
     };
-}
+};
 
-function stateAfterDecreasingCount(state, action) {
+const stateAfterDecreasingCount = (state, action) => {
     if (action.product.count > 1) {
         let productsCopy = [...state.products];
         let index = productsCopy.indexOf(action.product);
@@ -51,9 +51,9 @@ function stateAfterDecreasingCount(state, action) {
     } else {
         return state;
     }
-}
+};
 
-function stateAfterRemovingProduct(state, action) {
+const stateAfterRemovingProduct = (state, action) => {
     let productsCopy = [...state.products];
     let index = productsCopy.indexOf(action.product);
     productsCopy.splice(index, 1);
@@ -61,4 +61,4 @@ function stateAfterRemovingProduct(state, action) {
         id: state.id,
         products: productsCopy
     }
-}
+};

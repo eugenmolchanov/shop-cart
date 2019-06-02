@@ -1,9 +1,10 @@
 import React from "react";
-import ProductItem from './ProductItem';
+import ProductItem from '../container/product-item-container';
 import '../css/product-list.css';
 import TotalPrice from "./TotalPrice";
 
 class ProductList extends React.Component {
+
     render() {
         const products = this.props.products.map(product => {
             return <ProductItem key={product.id}

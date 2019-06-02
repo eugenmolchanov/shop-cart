@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import "../css/product-profile.css";
 
 class ProductProfile extends React.Component {
+
     render() {
         if (this.props.product === null) {
             return (
                 <div>
                     <h2>No item is selected</h2>
-                    <button><Link to="/">Back to list</Link></button>
+                    <BackToListButton/>
                 </div>
             );
         } else {
@@ -19,11 +20,19 @@ class ProductProfile extends React.Component {
                     <div className="profile-info">Count: {this.props.product.count}</div>
                     <div className="profile-info">Price: {this.props.product.price} $</div>
                     <div className="profile-info">Total: {this.props.product.price * this.props.product.count} $</div>
-                    <button><Link to="/">Back to list</Link></button>
+                    <BackToListButton/>
                 </div>
             )
         }
     }
+}
+
+function BackToListButton() {
+    return (
+        <button>
+            <Link to="/">Back to list</Link>
+        </button>
+    )
 }
 
 export default ProductProfile;
