@@ -1,23 +1,33 @@
-import AppleImage from "../image/apple.svg";
+import {
+    ADD_PRODUCT,
+    DECREASE_COUNT,
+    INCREASE_COUNT,
+    RECEIVE_PRODUCTS,
+    REMOVE_PRODUCT,
+    REQUEST_PRODUCTS
+} from "../util/constants";
 
 const initialState = {
-    id: 1,
-    products: [{
-        id: 1,
-        name: 'apples',
-        price: 4,
-        count: 2,
-        icon: AppleImage
-    }]
+    id: 0,
+    products: []
 };
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case 'ADD_PRODUCT': return stateAfterAddingProduct(state, action);
-        case 'INCREASE_COUNT': return stateAfterIncreasingCount(state, action);
-        case 'DECREASE_COUNT': return stateAfterDecreasingCount(state, action);
-        case 'REMOVE_PRODUCT': return stateAfterRemovingProduct(state, action);
-        default: return state;
+        case ADD_PRODUCT:
+            return stateAfterAddingProduct(state, action);
+        case INCREASE_COUNT:
+            return stateAfterIncreasingCount(state, action);
+        case DECREASE_COUNT:
+            return stateAfterDecreasingCount(state, action);
+        case REMOVE_PRODUCT:
+            return stateAfterRemovingProduct(state, action);
+        case RECEIVE_PRODUCTS:
+            return stateAfterReceivingProducts(action.state);
+        case REQUEST_PRODUCTS:
+            return stateDuringFetchingProducts(action.state);
+        default:
+            return state;
     }
 }
 
@@ -61,4 +71,16 @@ const stateAfterRemovingProduct = (state, action) => {
         id: state.id,
         products: productsCopy
     }
+};
+
+const stateAfterReceivingProducts = state => {
+    return Object.assign(state, {
+        isFetching: false
+    });
+};
+
+const stateDuringFetchingProducts = state => {
+    return Object.assign(state, {
+        isFetching: true
+    });
 };

@@ -6,19 +6,23 @@ import TotalPrice from "./TotalPrice";
 class ProductList extends React.Component {
 
     render() {
-        const products = this.props.products.map(product => {
-            return <ProductItem key={product.id}
-                                onShowProductProfile={this.props.onShowProductProfile.bind(this, product)}
-                                product={product}/>
-        });
+        if (this.props.isFetching) {
+            return 'is fetching...';
+        } else {
+            const products = this.props.products.map(product => {
+                return <ProductItem key={product.id}
+                                    onShowProductProfile={this.props.onShowProductProfile.bind(this, product)}
+                                    product={product}/>
+            });
 
-        return (
-            <div>
-                <h2>Product list</h2>
-                {products}
-                <TotalPrice products={this.props.products}/>
-            </div>
-        )
+            return (
+                <div>
+                    <h2>Product list</h2>
+                    {products}
+                    <TotalPrice products={this.props.products}/>
+                </div>
+            )
+        }
     }
 }
 

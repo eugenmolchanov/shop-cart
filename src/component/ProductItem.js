@@ -24,7 +24,7 @@ class ProductItem extends React.Component {
                     </div>
                 </div>
                 <div className="product-icon">
-                    <img src={this.props.product.icon} alt="" className="item-image"/>
+                    <img src={require('../image/' + this.props.product.icon)} alt="" className="item-image"/>
                 </div>
                 <Counter onIncrease={this.props.onIncreaseCounter} onDecrease={this.props.onDecreaseCounter}
                          count={this.props.product.count}/>

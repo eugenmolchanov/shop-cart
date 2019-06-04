@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './container/app-container';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux'
-import {createStore} from "redux";
+import {applyMiddleware, createStore} from "redux";
 import allReducers from "./reducer/index";
+import thunk from 'redux-thunk';
+import {fetchProducts} from "./action/action-creator";
 
-export const store = createStore(allReducers);
+const store = createStore(
+    allReducers,
+    applyMiddleware(thunk)
+);
 
 ReactDOM.render(
     <Provider store={store}>
-        <App/>
+        <App fetchProducts={fetchProducts}/>
     </Provider>,
     document.getElementById('root'));
 

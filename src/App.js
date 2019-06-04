@@ -5,6 +5,10 @@ import InfoSide from "./component/InfoSide";
 
 class App extends React.Component {
 
+    componentWillMount() {
+        this.props.fetchProducts();
+    }
+
     render() {
         return (
             <div className="app">
