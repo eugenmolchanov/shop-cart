@@ -13,12 +13,12 @@ class ProductItem extends React.Component {
                 <div className="product-name">{this.props.product.name}</div>
                 <div className="product-actions">
                     <div className="product-action">
-                        <img src={TrashImage} onClick={this.props.onRemoveItem} alt="trash"
+                        <img src={TrashImage} onClick={this.props.onRemoveItem} alt=""
                              className="action-image"/>
                     </div>
                     <div className="product-action">
                         <Link onClick={this.props.onShowProductProfile} to="/profile">
-                            <img src={AttachImage} onClick={this.props.onShowProductProfile} alt="trash"
+                            <img src={AttachImage} onClick={this.props.onShowProductProfile} alt=""
                                  className="action-image"/>
                         </Link>
                     </div>

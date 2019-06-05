@@ -5,10 +5,10 @@ import FormIcon from "./FormIcon";
 class ImageSelector extends React.Component {
 
     components = () => {
-        return this.props.productsIcons.map(product => {
-            return <FormIcon key={product}
-                             icon={product}
-                             onClick={this.props.onClick.bind(this, product)}/>
+        return this.props.productsIcons.map(icon => {
+            return <FormIcon key={icon}
+                             icon={icon}
+                             onClick={this.props.onClick.bind(this, icon)}/>
         })
     };
 

@@ -1,13 +1,8 @@
-import AppleImage from "../image/apple.svg";
-import IceCreamImage from "../image/ice-cream.svg";
-import BreadImage from "../image/bread.svg";
-import MilkImage from "../image/milk.svg";
-
 const initialState = [
-    MilkImage,
-    BreadImage,
-    AppleImage,
-    IceCreamImage
+    'apple.svg',
+    'ice-cream.svg',
+    'bread.svg',
+    'milk.svg'
 ];
 
 

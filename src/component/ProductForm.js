@@ -2,7 +2,6 @@ import React from "react";
 import Input from "./Input";
 import Counter from "./Counter";
 import "../css/product-form.css";
-import BucketImage from "../image/bucket.svg";
 import ImageSelector from "../container/products-icons-container";
 import FormIcon from "./FormIcon";
 
@@ -13,7 +12,7 @@ class ProductForm extends React.Component {
             name: '',
             price: 0,
             count: 1,
-            icon: BucketImage,
+            icon: 'bucket.svg',
             imageSelectorOpen: false
         }
     }
@@ -50,7 +49,7 @@ class ProductForm extends React.Component {
             name: '',
             price: 0,
             count: 1,
-            icon: BucketImage,
+            icon: 'bucket.svg',
         }, () => this.props.onAddProduct(product));
     };
 
