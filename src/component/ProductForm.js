@@ -49,7 +49,8 @@ class ProductForm extends React.Component {
         this.setState({
             name: '',
             price: 0,
-            count: 1
+            count: 1,
+            icon: BucketImage
         }, this.props.onAddProduct(product));
     };
 
