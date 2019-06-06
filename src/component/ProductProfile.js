@@ -29,9 +29,9 @@ class ProductProfile extends React.Component {
 
 function BackToListButton() {
     return (
-        <button>
-            <Link to="/">Back to list</Link>
-        </button>
+        <Link to="/">
+            <button>Back to list</button>
+        </Link>
     )
 }
 
